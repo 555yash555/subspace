@@ -92,9 +92,9 @@ Integration Testing involves testing the interactions between different componen
 
 Screenshots
 
-<img src="product.jpg" alt="drawing" height="500"/>
+<img src="product.jpg" alt="drawing" height="500"/><img src="cart.jpg" alt="drawing" height="500"/>
 
-<img src="cart.jpg" alt="drawing" height="500"/>
+
 
 <img src="checkout1.jpg" alt="drawing" height="500"/>
 <img src="checkout2.jpg" alt="drawing" height="500"/>
