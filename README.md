@@ -14,7 +14,7 @@ Running the App
 
     Clone this repository to your local machine:
 
-    git clone <repository_url>
+    git clone https://github.com/555yash555/digital_health_stratup_assignment.git
 
     Navigate to the project directory:
 
