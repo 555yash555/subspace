@@ -93,7 +93,7 @@ Integration Testing involves testing the interactions between different componen
 Screenshots
 
 Product Display
-![Screenshot](product.jpg)
+<img src="product.jpg" alt="drawing" height="200"/>
 Cart
 ![Screenshot](cart.jpg)
 Checkout
