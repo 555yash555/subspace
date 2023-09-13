@@ -3,6 +3,15 @@ Digital Health Startup Assignment
 🚀 This project showcases a powerful combination of innovative features in mobile app development. Firstly, it employs Provider state management to efficiently handle and synchronize data throughout the app, ensuring a smooth user experience. on reopening app it restores its state from the local storage Secondly, the app boasts a visually appealing and user-friendly UI design that enhances user engagement and satisfaction. Furthermore, it incorporates a navigational bar, facilitating easy navigation across three distinct screens. Lastly, the app is designed to be responsive, delivering an optimal experience across various devices. Altogether, this project exemplifies modern app development practices, offering a seamless and visually striking user journey.
 Getting Started
 
+Screenshots
+
+<img src="product.jpg" alt="drawing" height="500"/>                 <img src="cart.jpg" alt="drawing" height="500"/>
+
+
+
+<img src="checkout1.jpg" alt="drawing" height="500"/>                 <img src="checkout2.jpg" alt="drawing" height="500"/>
+
+
 To get started with the app, follow these steps:
 Prerequisites
 
@@ -90,13 +99,6 @@ Integration Testing involves testing the interactions between different componen
         Tap the "Place Order" button.
         Verify that a confirmation dialog appears, indicating that the order was successfully placed.
 
-Screenshots
-
-<img src="product.jpg" alt="drawing" height="500"/>                 <img src="cart.jpg" alt="drawing" height="500"/>
-
-
-
-<img src="checkout1.jpg" alt="drawing" height="500"/>                 <img src="checkout2.jpg" alt="drawing" height="500"/>
 
 
 
