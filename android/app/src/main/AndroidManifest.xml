@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="digital_health_stratup_assignment"
+        android:label="subspace"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
