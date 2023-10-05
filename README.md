@@ -1,6 +1,19 @@
 Subspace - News App
+Screenshots
+<img src="pic1.jpg" alt="drawing" height="500"/>                 <img src="Pic2.jpg" alt="drawing" height="500"/>
 
-Subspace Logo
+
+
+<img src="pic3.jpg" alt="drawing" height="500"/>                 <img src="pic4.jpg" alt="drawing" height="500"/>
+
+
+
+<img src="pic5.jpg" alt="drawing" height="500"/>                 <img src="pic6.jpg" alt="drawing" height="500"/>
+
+
+
+<img src="pic6.jpg" alt="drawing" height="500"/>
+
 
 Welcome to Subspace, your go-to news app that keeps you updated with the latest news from around the world. Subspace not only fetches news from various sources but also allows you to save your favorite articles for offline reading. Our app is designed with a minimalistic bi-color dark UI that enhances your reading experience, and it features a glowing favorite icon to make saving articles a breeze.
 Features
