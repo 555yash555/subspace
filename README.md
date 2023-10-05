@@ -4,7 +4,20 @@ Screenshots
 
 
 
-<img src="pic1.jpg" alt="drawing" height="500"/>                 <img src="Pic2.jpg" alt="drawing" height="500"/>                 <img src="pic3.jpg" alt="drawing" height="500"/> <img src="pic3.jpg" alt="drawing" height="500"/>                 <img src="pic4.jpg" alt="drawing" height="500"/> <img src="pic5.jpg" alt="drawing" height="500"/>                 <img src="pic6.jpg" alt="drawing" height="500"/> <img src="pic6.jpg" alt="drawing" height="500"/>
+<!-- First Row -->
+<p align="center">
+  <img src="pic1.jpg" alt="Image 1" height="300"/>
+  <img src="pic2.jpg" alt="Image 2" height="300"/>
+  <img src="pic3.jpg" alt="Image 3" height="300"/>
+</p>
+
+<!-- Second Row -->
+<p align="center">
+  <img src="pic4.jpg" alt="Image 4" height="300"/>
+  <img src="pic5.jpg" alt="Image 5" height="300"/>
+  <img src="pic6.jpg" alt="Image 6" height="300"/>
+</p>
+
 
 
 
