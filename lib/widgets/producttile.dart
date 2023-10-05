@@ -1,151 +1,170 @@
-import 'package:digital_health_stratup_assignment/controller/productprovider.dart';
-
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
-class ProductInfoTile extends StatelessWidget {
+import '../controller/newsprovider.dart';
+
+import 'package:cached_network_image/cached_network_image.dart';
+
+class Newstile extends StatelessWidget {
   final String name;
   final String image;
-  final int price;
   final String description;
   final product;
+  final int paginx;
   final int inx;
-  final paginx;
 
-  const ProductInfoTile(
-      {super.key,
-      required this.name,
-      required this.image,
-      required this.price,
-      required this.description,
-      required this.product,
-      this.inx = 0,
-      this.paginx = 0});
+  const Newstile({
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.description,
+    required this.product,
+    this.inx = 0,
+    this.paginx = 0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      child: ListTile(
-        leading: Container(
-          width: 80,
-          height: 80,
-          decoration: BoxDecoration(
-            shape: BoxShape.rectangle,
-            borderRadius: const BorderRadius.all(Radius.circular(3)),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(image),
-            ),
-          ),
-        ),
-        title: Text(
-          name,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-          ),
-        ),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 4),
-            Text(
-              'Price: Rs.${price.toStringAsFixed(2)}',
-              style: const TextStyle(
-                color: Colors.green,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+      child: InkWell(
+        onTap: () {
+          // Navigate to the detail page here, passing the necessary data.
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ProductDetailPage(
+                image: image,
+                name: name,
+                description: description,
               ),
             ),
-            const SizedBox(height: 4),
-            LayoutBuilder(
-              builder: (context, constraints) {
-                return FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    'Description: $description',
-                    style: const TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                );
-              },
-            ),
+          );
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: paginx == 0
-                        ? () {
-                            Provider.of<Product_provider>(context,
-                                    listen: false)
-                                .addtocart(product);
-                            print(product.name);
-                            Provider.of<Product_provider>(context,
-                                    listen: false)
-                                .savestate();
+                TextButton(
+                  onPressed: paginx == 0
+                      ? () {
+                          Provider.of<news_provider>(context, listen: false)
+                              .addtofavourites(product);
+                          print(product.title);
+                          Provider.of<news_provider>(context, listen: false)
+                              .savestate();
 
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text('Added to Cart: $name'),
-                              ),
-                            );
-                          }
-                        : () {
-                            Provider.of<Product_provider>(context,
-                                    listen: false)
-                                .removefromcart(inx);
-                            print(product.name);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Added to favourites: $name'),
+                            ),
+                          );
+                        }
+                      : () {
+                          Provider.of<news_provider>(context, listen: false)
+                              .removefromFavourites(inx);
+                          print(product.title);
 
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text('removed: $name'),
-                              ),
-                            );
-                          },
-                    child: Text(paginx == 0 ? 'Add to Cart' : 'Remove'),
-                  ),
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('removed: $name'),
+                            ),
+                          );
+                        },
+                  child: paginx == 0
+                      ? const Icon(Icons.star_border_outlined)
+                      : const Icon(Icons.star),
                 ),
-                paginx == 0
-                    ? const SizedBox(
-                        height: 0,
-                        width: 0,
-                      )
-                    : Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Expanded(
-                          child: Row(
-                            children: [
-                              IconButton(
-                                icon: const Icon(Icons.remove),
-                                onPressed: () {
-                                  Provider.of<Product_provider>(context,
-                                          listen: false)
-                                      .decreasequantity(inx);
-                                },
-                              ),
-                              Text(
-                                '${product.quantity}',
-                              ),
-                              IconButton(
-                                icon: const Icon(Icons.add),
-                                onPressed: () {
-                                  Provider.of<Product_provider>(context,
-                                          listen: false)
-                                      .increasequantity(inx);
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                      )
               ],
+            ),
+            Container(
+              width: double.infinity,
+              height: 190, // Adjust the height as needed
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: CachedNetworkImageProvider(image),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                name,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                description,
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class ProductDetailPage extends StatelessWidget {
+  final String name;
+  final String image;
+  final String description;
+
+  const ProductDetailPage({
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.description,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('News'),
+      ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: 200, // Adjust the height as needed
+            decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
+              image: DecorationImage(
+                  fit: BoxFit.cover, image: CachedNetworkImageProvider(image)),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              name,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Description: $description',
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
