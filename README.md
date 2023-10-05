@@ -7,8 +7,9 @@ Screenshots
 <!-- First Row -->
 <p align="center">
   <img src="pic1.jpg" alt="Image 1" height="300"/>
-  <img src="pic2.jpg" alt="Image 2" height="300"/>
+  <img src="Pic2.jpg" alt="Image 2" height="300"/>
   <img src="pic3.jpg" alt="Image 3" height="300"/>
+  <img src="pic7.jpg" alt="Image 6" height="300"/>
 </p>
 
 <!-- Second Row -->
